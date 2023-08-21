@@ -18,10 +18,10 @@ const page = ({params}) => {
     return (
         <div className="h-fit w-full mb-8">
             <div className="card w-full  bg-base-100 shadow-xl">
-  <figure><img src={data.img} alt="Shoes" /></figure>
+  <figure><img src={data?.img} alt="Shoes" /></figure>
   <div className="card-body">
-                    <h2 className="card-title">{data.title }</h2>
-                    <p className="text-lg font-medium">{data.content }</p>
+                    <h2 className="card-title">{data?.title }</h2>
+                    <p className="text-lg font-medium">{data?.content }</p>
     <div className="card-actions justify-end">
     </div>
   </div>
