@@ -1,9 +1,40 @@
+"use client"
 import React from 'react';
-
+import { useState, useEffect } from 'react';
+import Page from '../../components/CartDetails/page'
 const page = () => {
+    const [data,setData]=useState([])
+  useEffect(() => {
+    fetch('https://basic-blog.teamrabbil.com/api/post-newest')
+      .then(res => res.json()) // Corrected the syntax here
+      .then(data => {
+        setData(data)
+        console.log(data[0],"got these data");
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); 
     return (
-        <div className="h-screen">
-            <h3 className="text-5xl text-center text-gray-700 font-bold">The Blog  page</h3>
+ <div className="h-fit mt-10 mb-10 p-5">
+        <ul>
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4">
+          {data.map((item) => (
+         <div className="card card-compact w-96 bg-base-100 shadow-xl ">
+            <figure><img src={item.img} alt="img"/></figure>
+          <div className="card-body">
+              <h2 className="card-title">{item.title}</h2>
+              <p>{item.short }</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Read more...</button>
+            </div>
+          </div>
+        </div> 
+        ))}
+          </div>
+      
+          
+      </ul>
         </div>
     );
 };
