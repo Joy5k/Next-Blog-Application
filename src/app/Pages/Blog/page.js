@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Page from '../../components/CartDetails/page'
 const page = () => {
     const [data,setData]=useState([])
   useEffect(() => {
