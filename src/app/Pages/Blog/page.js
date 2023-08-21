@@ -19,9 +19,9 @@ const page = () => {
     return (
  <div className="h-fit mt-10 mb-10 p-5">
         <ul>
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4">
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-4">
           {data.map((item) => (
-         <div className="card card-compact w-96 bg-base-100 shadow-xl ">
+         <div className="card card-compact w-fit bg-base-100 shadow-xl ">
             <figure><img src={item.img} alt="img"/></figure>
           <div className="card-body">
               <h2 className="card-title">{item.title}</h2>
