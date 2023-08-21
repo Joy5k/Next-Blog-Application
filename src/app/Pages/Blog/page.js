@@ -1,6 +1,8 @@
 "use client"
 import React from 'react';
 import { useState, useEffect } from 'react';
+import Link from "next/link";
+
 const page = () => {
     const [data,setData]=useState([])
   useEffect(() => {
@@ -25,7 +27,11 @@ const page = () => {
               <h2 className="card-title">{item.title}</h2>
               <p>{item.short }</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Read more...</button>
+                    <button className="btn btn-primary">
+                    <Link className="link" href={`/Pages/Blog/${item.id}`}>
+                    Read more...
+                    </Link>
+                    </button>
             </div>
           </div>
         </div> 
